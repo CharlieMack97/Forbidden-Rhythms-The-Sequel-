@@ -41,8 +41,21 @@ void TransitionLevel::handleInput(float dt)
 		case State::PRE_THREE:
 			gameState->setCurrentState(State::WIZARD);
 			break;
+		case State::PRE_FOUR:
+			gameState->setCurrentState(State::ENDLESS_LEVEL);
+			break;
 		case State::ENDGAME:
 			gameState->setCurrentState(State::RESET);
+			break;
+		}
+	}
+	if (input->isPressed(sf::Keyboard::Num2))
+	{
+		switch (gameState->getCurrentState())
+		{
+		case State::PRE_FOUR:
+			
+			gameState->setCurrentState(State::ENDLESS_LEVEL2);
 			break;
 		}
 	}
@@ -62,6 +75,9 @@ void TransitionLevel::update(float dt)
 	case State::PRE_THREE:
 		explain.setString("Move with WASD.\nMove in time with the claps.\nAvoid Tanks and Pits.\nThere is a checkpoint.\nYou will be assisted.\nKind of.\nHit Enter.\nGood Luck.");
 		break;
+	case State::PRE_FOUR:
+		explain.setString("Player 1 Moves with A D For left and right W (Jump) Space for attack.\n Player 2 Moves with Arrow keys Enter for Attack.\n Attack in time with the beat.\nAvoid Erin and Will's.\n\nHit Enter for 1 Player or num2 for 2 Player.\nGood Luck.");
+		break;
 	case State::ENDGAME:
 		runResults* results = gameState->getResults();
 		std::string resultsString;
@@ -80,6 +96,12 @@ void TransitionLevel::update(float dt)
 			resultsString += "Level 3 deaths:\t\t\t" + std::to_string(results->L3Deaths) + "\n";
 			resultsString += "Level 3 time:\t\t\t" + std::to_string(results->L3Time) + " seconds\n";
 		}
+		if (results->L4Time > 0)
+		{
+			resultsString += "Level 4 Kills:\t\t\t" + std::to_string(results->L4Kills) + "\n";
+			resultsString += "Level 4 time alive:\t\t\t" + std::to_string(results->L4Time) + " seconds\n";
+		}
+		
 		explain.setString(resultsString + "\nPress Enter to continue.");
 		break;
 	}

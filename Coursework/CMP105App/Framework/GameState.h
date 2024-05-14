@@ -13,9 +13,12 @@ enum class State {
 	PRE_ONE,
 	PRE_TWO,
 	PRE_THREE,
+	PRE_FOUR,
 	ENDGAME,
 	RUNNER,
 	WIZARD,
+	ENDLESS_LEVEL,
+	ENDLESS_LEVEL2,
 	RESET
 };
 
@@ -32,6 +35,8 @@ public:
 	float L3Time;
 	int L3Deaths;
 	float L3Success;
+	float L4Time;
+	int L4Kills;
 };
 
 class GameState
