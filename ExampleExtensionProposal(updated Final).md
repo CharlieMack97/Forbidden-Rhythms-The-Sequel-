@@ -1,3 +1,48 @@
+# CMP105 2024 Final Submission 
+
+## Game 
+
+**Forbidden Rythmes the endless survival** 
+
+Keeping the base levels while adding a new survival level for the dino to try not to die.
+
+**Controls:** 
+
+all controls are explained before the level: 
+For Level 1 and 3 the controls are WASD
+For level 2 the runner level its space and enter 
+
+WAD to move to move player 1 space to attack
+Arrow keys for player 1 movement and enter for Attack
+
+Level selction remains the same
+
+## Student Details
+
+**Student Name:** Charlie Mackenzie
+
+**Student Number:** 2303612
+
+**Course:** _CGT_ (delete as appropriate)
+
+## Changelist
+_The changes you have made since the group submission._
+
+New player Class to allow a continous input and movement on the new Level;
+New Level with a slightly paralazig background;
+new Enemy class using sprite of LecturErin and moving towards the player;
+
+Player Selection, choosing to do 1 or 2 player on the new level; 
+
+## Known Bugs
+_List any issues you are aware of and how to avoid them_
+
+
+Reseting on level 4 (endless Level) does not work which means after running as 2 player it continous loads as 2 player
+
+
+
+
 # CMP105 Extension Proposal
 
 ## Student Details
